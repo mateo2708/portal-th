@@ -1,0 +1,39 @@
+// Dependencies
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+{{#if hasTranslations}}
+import { useTranslation } from 'react-i18next';
+{{/if}}
+
+// Styles
+import classes from './style.module.css';
+
+/**
+ * @author {{ authorName }}.
+ * @component {{ pascalCase name }}.
+ * @description {{ description }}.
+ */
+function {{ pascalCase name }}({ className }) {
+  {{#if hasTranslations}}
+  const { t } = useTranslation();
+  {{/if}}
+  return (
+    <div className={classNames(classes.root, className)}>
+      {{ pascalCase name }}
+      {{#if hasTranslations}}
+      {t('{{pascalCase name}}.title', 'Add translation title')}
+      {{/if}}
+    </div>
+  );
+}
+
+{{pascalCase name}}.defaultProps = {
+  className: PropTypes.string,
+};
+
+{{pascalCase name}}.propTypes = {
+  className: '',
+};
+
+export default {{ pascalCase name }};

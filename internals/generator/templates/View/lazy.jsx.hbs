@@ -1,0 +1,21 @@
+// Dependencies
+import React, { Suspense, lazy } from 'react';
+
+// Components
+import Loading from '@components/Loading';
+
+// Lazy import
+const {{ pascalCase name }} = lazy(() => import('@views/{{ properCase name }}/index'));
+
+/**
+ * @author {{ authorName }}.
+ * @component {{ pascalCase name }}. 
+ * @description {{ pascalCase name }} lazy loading wrapper.
+ */
+const Lazy{{pascalCase name}} = (props) => (
+  <Suspense fallback={<Loading />}>
+    <{{ pascalCase name }} {...props} />
+  </Suspense>
+);
+
+export default Lazy{{pascalCase name}};

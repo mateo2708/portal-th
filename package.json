@@ -1,0 +1,70 @@
+{
+  "name": "portal-th",
+  "version": "0.1.0",
+  "private": true,
+  "author": "MateoTG",
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "scripts": {
+    "start": "nodemon -w ./antd.customize.less --exec \"craco start\"",
+    "build": "craco build",
+    "test": "craco test",
+    "generate": "plop  --plopfile internals/generator/index.js"
+  },
+  "dependencies": {
+    "@craco/craco": "5.6.4",
+    "antd": "4.3.1",
+    "classnames": "2.2.6",
+    "craco-antd": "1.18.0",
+    "craco-less": "1.17.0",
+    "i18next": "19.4.4",
+    "i18next-xhr-backend": "3.2.2",
+    "node-sass": "4.14.1",
+    "prop-types": "15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-i18next": "11.4.0",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "3.4.1",
+    "react-spinners": "0.8.3",
+    "sass": "1.26.8",
+    "tinycolor": "0.0.1",
+    "webpack-bundle-analyzer": "3.8.0",
+    "webpackbar": "4.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.7.0",
+    "@testing-library/react": "10.0.4",
+    "@testing-library/user-event": "10.3.1",
+    "craco-alias": "2.1.1",
+    "husky": "4.2.5",
+    "lint-staged": "10.2.2",
+    "nodemon": "2.0.4",
+    "plop": "2.6.0",
+    "prettier": "2.0.5"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

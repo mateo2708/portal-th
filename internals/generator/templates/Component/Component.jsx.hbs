@@ -1,0 +1,26 @@
+// Dependencies
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
+// Styles
+import classes from './style.module.css';
+
+/**
+ * @author {{ authorName }}
+ * @component {{ pascalCase name }}
+ * @description {{ description }}
+ */
+function {{ pascalCase name }}({ className }) {
+  return <div className={classNames(classes.root, className)}> {{ pascalCase name }} </div>;
+}
+
+{{pascalCase name}}.defaultProps = {
+  className: PropTypes.string,
+};
+
+{{pascalCase name}}.propTypes = {
+  className: '',
+};
+
+export default {{ pascalCase name }};
