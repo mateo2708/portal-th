@@ -16,11 +16,11 @@ function Loading({ className }) {
 }
 
 Loading.defaultProps = {
-  className: PropTypes.string,
+  className: '',
 };
 
 Loading.propTypes = {
-  className: '',
+  className: PropTypes.string,
 };
 
 export default Loading;

@@ -16,34 +16,34 @@ import AppRoutes from '@components/AppRoutes';
 import classes from './style.module.css';
 
 /**
- * @author {{ authorName }}
- * @component {{ pascalCase name }}
- * @description {{ description }}
- */
+* @author {{ authorName }}
+* @component {{ pascalCase name }}
+* @description {{ description }}
+*/
 function {{ pascalCase name }}({ className }) {
-  {{#if hasTranslations}}
-  const { t } = useTranslation();
-  {{/if}}
+{{#if hasTranslations}}
+const { t } = useTranslation();
+{{/if}}
 
-  return (
-    <div className={classNames(classes.root, className)}>
-      {{ pascalCase name }}
-      {{#if hasTranslations}}
-      {t('{{pascalCase name}}.title', 'Add translation title')}
-      {{/if}}
-      {{#if hasRoutes}}
-      <AppRoutes routes={routes} />
-      {{/if}}
-    </div>
-  );
+return (
+<div className={classNames(classes.root, className)}>
+  {{ pascalCase name }}
+  {{#if hasTranslations}}
+  {t('{{pascalCase name}}.title', 'Add translation title')}
+  {{/if}}
+  {{#if hasRoutes}}
+  <AppRoutes routes={routes} />
+  {{/if}}
+</div>
+);
 }
 
 {{pascalCase name}}.defaultProps = {
-  className: PropTypes.string,
+className: '',
 };
 
 {{pascalCase name}}.propTypes = {
-  className: '',
+className: PropTypes.string,
 };
 
 export default {{ pascalCase name }};

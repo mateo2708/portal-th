@@ -8,7 +8,10 @@
       "@utils/*": ["utils/*"],
       "@config/*": ["config/*"],
       "@assets/*": ["assets/*"],
-      "@styles/*": ["assets/styles/*"]
+      "@styles/*": ["assets/styles/*"],
+      "@adapters/*": ["adapters/*"],
+      "@services/*": ["services/*"],
+      "@hooks/*": ["utils/hooks/*"]
     }
   }
 }

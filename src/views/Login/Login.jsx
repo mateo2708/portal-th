@@ -11,25 +11,45 @@ import { Row, Col } from 'antd'; //Layout imports
 import { Form, Input, Checkbox, Button, Card } from 'antd'; // Components imports
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
+import logoImage from '@assets/logoTH.png';
+
+//hooks
+import { useRouter } from '@hooks/useRouter';
+import { useAuth } from '@hooks/useAuth';
+
 /**
  * @author MateoTG
  * @component Login
  * @description Login view component for portal-th
  */
 function Login({ className }) {
+  const router = useRouter();
+  const auth = useAuth();
+
   const onFinish = (values) => {
-    console.log('Success:', values);
+    const { email, password } = values;
+    console.log('Iniciando autenticación');
+    console.log('Email:', email);
+    console.log('Password:', password);
+    auth
+      .signin(email, password)
+      .then((res) => {
+        router.push('/dashboard');
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <div className={classNames(classes.root, className)}>
       <Row className={classes.row} justify="center">
-        <Col xs={22} sm={18} md={14} lg={10} xl={8}>
+        <Col className={classes.col} xs={22} sm={18} md={14} lg={10} xl={8}>
           <Card className={classes.formBox}>
-            <div clasName={classes.logo}>
-              <img srs="@assets/logoTH.png" alt="TH Logo" />
+            <div className={classes.logo}>
+              <img src={logoImage} alt="TH Logo" />
             </div>
             <Form
-              name="normal_login"
+              name="main_login"
               initialValues={{
                 remember: true,
               }}

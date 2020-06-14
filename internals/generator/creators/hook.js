@@ -23,7 +23,7 @@ function getPromps() {
 }
 
 function getActions(data) {
-  const path = '../../utils/hooks/';
+  const path = '../../src/utils/hooks/';
   let actions = [
     {
       type: 'add',

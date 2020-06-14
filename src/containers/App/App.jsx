@@ -1,10 +1,8 @@
 // Dependencies
 import React from 'react';
-import { Route } from 'react-router';
+import Router from '@components/AppRoutes';
+import routes from '@views/routes';
 import './App.less';
-
-// Views
-import Login from '@views/Login';
 
 /**
  * @author Sebastian Botero
@@ -12,7 +10,7 @@ import Login from '@views/Login';
  * @description Default App container.
  */
 function App() {
-  return <Route path="/" component={Login}></Route>;
+  return <Router routes={routes}></Router>;
 }
 
 export default App;

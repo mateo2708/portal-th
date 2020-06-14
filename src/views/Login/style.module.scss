@@ -1,13 +1,20 @@
 .root {
   background-color: #c2c2c2;
+  background-image: url('../../assets/loginBG.jpg');
+  background-color: #484848;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
   .row {
     height: 100vh;
     align-items: center;
     .formBox {
-      height: 30rem;
+      max-width: 25rem;
       .logo {
         width: 100%;
         padding: 10px;
+        position: relative;
+        margin-bottom: 1rem;
         img {
           width: 100%;
         }
