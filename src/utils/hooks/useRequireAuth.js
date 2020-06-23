@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
 import { useAuth } from '@hooks/useAuth';
-import { useRouter } from '@hooks/useRouter';
 
 /**
  * @author MateoTG.
@@ -8,19 +6,11 @@ import { useRouter } from '@hooks/useRouter';
  * @description Hook to verify authentications on routes.
  */
 
-const useRequireAuth = (redirectUrl = '/') => {
+const useRequireAuth = () => {
   const auth = useAuth();
-  const router = useRouter();
+  const authLocal = JSON.parse(localStorage.getItem('authUser'));
 
-  // If auth.user is false that means we're not
-  // logged in and should redirect.
-  useEffect(() => {
-    if (auth.user === false) {
-      router.push(redirectUrl);
-    }
-  }, [auth, router, redirectUrl]);
-
-  return auth;
+  return auth.user || authLocal;
 };
 
 export default useRequireAuth;

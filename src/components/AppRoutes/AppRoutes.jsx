@@ -60,7 +60,7 @@ function RouteWithSubRoutes(route) {
 
 function AuthRoute(route) {
   const auth = useRequireAuth();
-
+  console.log(auth);
   if (auth) {
     return (
       <Route
@@ -70,7 +70,7 @@ function AuthRoute(route) {
       />
     );
   }
-  return null;
+  return <Redirect to="/auth/login" />;
 }
 
 export default AppRoutes;

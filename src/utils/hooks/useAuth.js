@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext, createContext } from "react";
-import * as firebase from "firebase/app";
-import "firebase/auth";
+import React, { useState, useEffect, useContext, createContext } from 'react';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 import { firebaseConfig } from '@config';
 
 /**
@@ -30,14 +30,14 @@ export const useAuth = () => {
 // Provider hook that creates auth object and handles state
 function useProvideAuth() {
   const [user, setUser] = useState(null);
-  
+
   // Wrap any Firebase methods we want to use making sure ...
   // ... to save the user to state.
   const signin = (email, password) => {
     return firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(response => {
+      .then((response) => {
         setUser(response.user);
         return response.user;
       });
@@ -47,7 +47,7 @@ function useProvideAuth() {
     return firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then(response => {
+      .then((response) => {
         setUser(response.user);
         return response.user;
       });
@@ -62,7 +62,7 @@ function useProvideAuth() {
       });
   };
 
-  const sendPasswordResetEmail = email => {
+  const sendPasswordResetEmail = (email) => {
     return firebase
       .auth()
       .sendPasswordResetEmail(email)
@@ -85,18 +85,20 @@ function useProvideAuth() {
   // ... component that utilizes this hook to re-render with the ...
   // ... latest auth object.
   useEffect(() => {
-    const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+    const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        localStorage.setItem('authUser', JSON.stringify(user));
         setUser(user);
       } else {
         setUser(false);
+        localStorage.removeItem('authUser');
       }
     });
 
     // Cleanup subscription on unmount
     return () => unsubscribe();
   }, []);
-  
+
   // Return the user object and auth methods
   return {
     user,
@@ -104,6 +106,6 @@ function useProvideAuth() {
     signup,
     signout,
     sendPasswordResetEmail,
-    confirmPasswordReset
+    confirmPasswordReset,
   };
 }

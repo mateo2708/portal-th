@@ -8,7 +8,7 @@ import classes from './style.module.scss';
 
 //AntD Componentes
 import { Row, Col } from 'antd'; //Layout imports
-import { Form, Input, Checkbox, Button, Card } from 'antd'; // Components imports
+import { Form, Input, Checkbox, Button, Card, message } from 'antd'; // Components imports
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
 import logoImage from '@assets/logoTH.png';
@@ -28,16 +28,13 @@ function Login({ className }) {
 
   const onFinish = (values) => {
     const { email, password } = values;
-    console.log('Iniciando autenticación');
-    console.log('Email:', email);
-    console.log('Password:', password);
     auth
       .signin(email, password)
       .then((res) => {
         router.push('/dashboard');
       })
       .catch((err) => {
-        console.log(err);
+        message.error(err.message);
       });
   };
   return (

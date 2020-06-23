@@ -27,14 +27,14 @@ const routes = [
     component: Layout,
     routes: [
       {
-        path: `${pathStart}dashboard/sisas`,
+        path: `${pathStart}dashboard/home`,
         component: () => <h1>El dashboard</h1>,
       },
+      {
+        redirect: true,
+        to: `${pathStart}dashboard/home`,
+      },
     ],
-  },
-  {
-    redirect: true,
-    to: '/auth/login',
   },
 ];
 
