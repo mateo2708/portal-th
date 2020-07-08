@@ -2,7 +2,6 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { ProvideAuth } from '@hooks/useAuth';
 
 // Translations
 import '@utils/i18n';
@@ -22,9 +21,7 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
   <Suspense fallback={Loading}>
     <Router>
-      <ProvideAuth>
-        <App />
-      </ProvideAuth>
+      <App />
     </Router>
   </Suspense>,
   document.getElementById('root')

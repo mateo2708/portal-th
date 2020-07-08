@@ -5,7 +5,7 @@ import routes from '@views/routes';
 import './App.less';
 
 /**
- * @author Sebastian Botero
+ * @author MateoTG
  * @component App
  * @description Default App container.
  */

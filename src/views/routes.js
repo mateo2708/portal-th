@@ -1,5 +1,9 @@
 import React from 'react';
+
+//Views
 import LazyLogin from '@views/Login/LazyLogin';
+import LazyProcesos from '@views/Procesos/LazyProcesos';
+import LazyMiEmpresa from '@views/MiEmpresa/LazyMiEmpresa';
 
 import AppRoutes from '@components/AppRoutes';
 import Layout from '@containers/Layout';
@@ -27,15 +31,27 @@ const routes = [
     component: Layout,
     routes: [
       {
-        path: `${pathStart}dashboard/home`,
-        component: () => <h1>El dashboard</h1>,
+        path: `${pathStart}dashboard/procesos`,
+        component: LazyProcesos,
       },
       {
-        redirect: true,
-        to: `${pathStart}dashboard/home`,
+        path: `${pathStart}dashboard/consultas`,
+        component: () => <h1>Consultas</h1>,
+      },
+      {
+        path: `${pathStart}dashboard/mi-empresa`,
+        component: LazyMiEmpresa,
+      },
+      {
+        path: `${pathStart}dashboard/mi-perfil`,
+        component: () => <h1>Mi Perfil</h1>,
       },
     ],
   },
+  // {
+  //   redirect: true,
+  //   to: `${pathStart}auth/login`,
+  // },
 ];
 
 export default routes;

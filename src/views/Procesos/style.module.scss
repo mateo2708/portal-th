@@ -1,0 +1,77 @@
+.root {
+  padding: 1rem;
+  height: 100%;
+  .header {
+    font-weight: bold;
+    font-size: x-large;
+    background: transparent;
+  }
+  .content {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    .insights {
+      margin: 2rem 0;
+      .card {
+        flex: 1 0 20rem;
+        .ant-card-body {
+          padding: 1px;
+        }
+        .cardBody {
+          text-align: center;
+          font-size: 3rem;
+          font-weight: bold;
+          color: white;
+        }
+        .cardTitle {
+          border-top: 1px solid white;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          .subtitle {
+            font-size: medium;
+          }
+          .title {
+            font-size: large;
+            font-weight: bolder;
+          }
+        }
+      }
+      .activos {
+        background-image: linear-gradient(
+          to right bottom,
+          #6ac23b,
+          #78c237,
+          #85c133,
+          #92c130,
+          #9dc02e
+        );
+      }
+      .suspendidos {
+        background-image: linear-gradient(
+          to right bottom,
+          #e3dc3f,
+          #e5d83e,
+          #e7d43d,
+          #e9d03c,
+          #ebcc3c
+        );
+      }
+      .inactivos {
+        background-image: linear-gradient(
+          to right bottom,
+          #e36d44,
+          #e57042,
+          #e77340,
+          #e9763e,
+          #eb793c
+        );
+      }
+    }
+    .table {
+      height: 100%;
+    }
+  }
+}

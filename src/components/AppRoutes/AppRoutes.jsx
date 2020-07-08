@@ -60,7 +60,6 @@ function RouteWithSubRoutes(route) {
 
 function AuthRoute(route) {
   const auth = useRequireAuth();
-  console.log(auth);
   if (auth) {
     return (
       <Route
