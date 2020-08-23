@@ -1,5 +1,5 @@
 .root {
-  padding: 1rem;
+  padding: 10px;
   height: 100%;
   .header {
     font-weight: bold;
@@ -7,7 +7,7 @@
     background: transparent;
   }
   .content {
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     display: flex;
     flex-flow: column;
     height: 100%;
@@ -15,8 +15,8 @@
       margin: 2rem 0;
       .card {
         flex: 1 0 20rem;
-        .ant-card-body {
-          padding: 1px;
+        :global(.ant-card-body) {
+          padding: 5px 10px;
         }
         .cardBody {
           text-align: center;
